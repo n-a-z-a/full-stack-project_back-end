@@ -14,7 +14,7 @@ public class TrackController {
 
     @GetMapping("/track")
     public String getTrack () {
-        return "getting a track";
+        return "getting track";
     }
 
     @GetMapping("/tracks")
