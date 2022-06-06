@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 public class Track {
@@ -14,6 +15,8 @@ public class Track {
     private String title;
     private String artist;
     private String genre;
+
+    private LocalDateTime dateCreated;
 
     public Track() {
 
@@ -49,5 +52,13 @@ public class Track {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public LocalDateTime getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(LocalDateTime dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }
