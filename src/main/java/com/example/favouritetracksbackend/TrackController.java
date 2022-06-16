@@ -7,27 +7,23 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins  = {"http://localhost:3000"} )
 public class TrackController {
-
-
 
 
     @Autowired
     TrackRepository trackRepository;
 
-    @CrossOrigin(origins  = {"http://localhost:3000"} )
     @GetMapping("/track")
     public String getTrack () {
         return "getting track";
     }
 
-    @CrossOrigin(origins  = {"http://localhost:3000"} )
     @GetMapping("/tracks")
     public List<Track> getTracks () {
         return trackRepository.findAll();
     }
 
-    @CrossOrigin(origins  = {"http://localhost:3000"} )
     @PostMapping("/tracks")
     public String addTrack (@RequestBody Track text) {
         this.trackRepository.save(text);
@@ -35,7 +31,6 @@ public class TrackController {
         return "Track saved okay";
     }
 
-    @CrossOrigin(origins  = {"http://localhost:3000"} )
     @DeleteMapping("/tracks/{trackId}")
     @Transactional
     public String deleteTrack(@PathVariable int trackId) {
