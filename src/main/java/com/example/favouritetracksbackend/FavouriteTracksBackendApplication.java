@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @SpringBootApplication
 public class FavouriteTracksBackendApplication {
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(FavouriteTracksBackendApplication.class, args);
 	}

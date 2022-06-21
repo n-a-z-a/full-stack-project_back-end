@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Track {
@@ -18,9 +19,11 @@ public class Track {
     private String genre;
 
     private LocalDate dateCreated;
+    private String dateCreatedFormatted;
 
     public Track() {
         dateCreated = LocalDateTime.now().toLocalDate();
+        dateCreatedFormatted = dateCreated.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     public int getTrackId() {
@@ -61,5 +64,13 @@ public class Track {
 
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public String getDateCreatedFormatted() {
+        return dateCreatedFormatted;
+    }
+
+    public void setDateCreatedFormatted(String dateCreatedFormatted) {
+        this.dateCreatedFormatted = dateCreatedFormatted;
     }
 }

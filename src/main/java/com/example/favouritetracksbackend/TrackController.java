@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.util.List;
 
+@CrossOrigin(origins = {"http://localhost:3000", })
 @RestController
-@CrossOrigin(origins  = {"http://localhost:3000"} )
 public class TrackController {
 
 
@@ -19,19 +19,23 @@ public class TrackController {
         return "getting track";
     }
 
+
     @GetMapping("/tracks")
     public List<Track> getTracks () {
         return trackRepository.findAll();
     }
 
-    @PostMapping("/tracks")
+
+
+    @PostMapping("/track")
     public String addTrack (@RequestBody Track text) {
         this.trackRepository.save(text);
         System.out.println("Added " + text);
         return "Track saved okay";
     }
 
-    @DeleteMapping("/tracks/{trackId}")
+
+    @DeleteMapping("/track/{trackId}")
     @Transactional
     public String deleteTrack(@PathVariable int trackId) {
         System.out.println("track = " + trackId);
