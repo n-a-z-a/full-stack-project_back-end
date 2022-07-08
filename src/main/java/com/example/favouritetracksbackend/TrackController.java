@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin(origins = {"https://n-a-z-a.github.io/full-stack-project_front-end/"})
+@CrossOrigin
 public class TrackController {
 
 
