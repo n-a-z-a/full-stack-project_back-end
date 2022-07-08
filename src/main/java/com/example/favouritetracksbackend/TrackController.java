@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@CrossOrigin(origins = {"http://localhost:3000", "https://n-a-z-a.github.io/full-stack-project_front-end/"})
+
 @RestController
+@CrossOrigin(origins = {"https://n-a-z-a.github.io/full-stack-project_front-end/"})
 public class TrackController {
 
 
